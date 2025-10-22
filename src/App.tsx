@@ -13,6 +13,16 @@ export default function App() {
   return (
     <>
       <h1>Projeto Romulo</h1>
+      // Chamo a função Aluno
+      <Aluno />
     </>
+  )
+}
+
+// No mesmo arquivo crio o componente/função Aluno
+// Para ver funcionando, chamo a função dentro do component App
+function Aluno(){
+  return (
+    <h2>Aluno: Romulo Rosa</h2>
   )
 }
