@@ -1,10 +1,18 @@
 import "./footer.css"
 
-export function Footer() {
+interface FooterProps{
+  brand: string;
+  copyright?: string;
+} 
+
+export function Footer({brand, copyright}: FooterProps) {
   return (
     <>
       <footer className="footer__wrapper">
-        <h4 className="footer__copyright">Todos os direitos reservado</h4>
+        <div className="footer__content">
+          <h4 className="footer__brand">{brand}</h4>
+          <p className="footer__copyright">{copyright}</p>
+        </div>
       </footer>
     </>
   )
