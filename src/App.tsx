@@ -14,11 +14,25 @@ import { Footer } from "./components/Footer";
 export default function App() {
   return (
     <>
-      <Header />
-      <Aluno nome="Romulo" idade={40} />
-      <Aluno nome="Leonardo" idade={21} />
-      <Aluno nome="Flávio" idade={32} />
-      <Footer />
+      <Header
+        title="Romulo Alinhamentyo Smartts"
+      />
+      <Aluno
+        nome="Romulo"
+        idade={40}
+      />
+      <Aluno
+        nome="Leonardo"
+        idade={21}
+      />
+      <Aluno
+        nome="Flávio"
+        idade={32}
+      />
+      <Footer
+        brand="Smartts Utilities"
+        copyright="Todos os direitos reservados"
+      />
     </>
   )
 }
