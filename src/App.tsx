@@ -14,7 +14,9 @@ export default function App() {
     <>
       <h1>Projeto Romulo</h1>
       // Chamo a função Aluno
-      <Aluno />
+      <Aluno nome = "Romulo" />
+      <Aluno nome = "Leonardo" />
+      <Aluno nome = "Flávio" />
     </>
   )
 }
