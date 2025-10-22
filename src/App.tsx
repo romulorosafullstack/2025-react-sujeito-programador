@@ -19,10 +19,17 @@ export default function App() {
   )
 }
 
+// Pra poder usar props declaro uma interface pro component Aluno
+interface AlunoProps {
+  nome: string;
+}
+
 // No mesmo arquivo crio o componente/função Aluno
 // Para ver funcionando, chamo a função dentro do component App
-function Aluno(){
+// Com a interface AlunoProps criada passo a prop nome na função Aluno
+function Aluno({nome}: AlunoProps) {
   return (
-    <h2>Aluno: Romulo Rosa</h2>
+    // Com a prop passada como argumento posso chamar pra que exiba pelo componente Aluno
+    <h2>Aluno: {nome}</h2>
   )
 }
