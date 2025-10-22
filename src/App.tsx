@@ -1,7 +1,7 @@
 // COMPONENT APP
 // Component em forma de function
 // OBS: Component com Props - Recomenda-se somente para componets que sejam aproveitados mais de uma vez
-
+import "./reset.css"
 import { Header } from "./components/Header";
 
 
