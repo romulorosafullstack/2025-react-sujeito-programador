@@ -1,0 +1,14 @@
+.header__wrapper{
+  align-items: center;
+  border: 2px solid green;
+  display: flex;
+  height: 20vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+.header__title{
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+}
