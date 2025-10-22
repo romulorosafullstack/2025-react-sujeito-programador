@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <>
       <footer className="footer__wrapper">
-        <h1 className="footer__title">Footer</h1>
+        <h4 className="footer__copyright">Todos os direitos reservado</h4>
       </footer>
     </>
   )
