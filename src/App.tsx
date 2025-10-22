@@ -1,6 +1,7 @@
 import "./reset.css"
 import { Header } from "./components/Header";
 import { Aluno } from "./components/Aluno";
+import { Footer } from "./components/Footer";
 
 
 // function - função
@@ -17,6 +18,7 @@ export default function App() {
       <Aluno nome="Romulo" idade={40} />
       <Aluno nome="Leonardo" idade={21} />
       <Aluno nome="Flávio" idade={32} />
+      <Footer />
     </>
   )
 }

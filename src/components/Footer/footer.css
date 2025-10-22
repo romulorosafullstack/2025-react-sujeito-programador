@@ -1,0 +1,15 @@
+.footer__wrapper{
+  align-items: center;
+  background-color: red;
+  display: flex;
+  height: 10vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+.footer__title{
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
