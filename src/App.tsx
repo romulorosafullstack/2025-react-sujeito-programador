@@ -8,37 +8,49 @@ export default function App() {
 
   // DECLARANDO ESTADOS
   // const - constante
-  // [input, setInput] = Array de estados [estadoInicial, estadoAtualizado]
+  // [aluno, setAluno] = Array de estados [estadoInicial, estadoAtualizado]
   // = Atribuição
-  // useState("") - cria estado inicial, no caso como vazio
-  const [input, setInput] = useState("")
+  // useState("") - cria estado inicial, ("") no caso como vazio
+  const [aluno, setAluno] = useState("")
+  const [idade, setIdade] = useState("")
 
 
-  // functin - função
+  // function - função
   // mostrarAluno - nome
   // () - inicializador sewm param
   // {} - Bloco de código que será executado
   // alert(input) - Função que exibe um alerta passando o valor do estado input
   function mostrarAluno() {
-    alert(input);
+    alert(`ALUNO: ${aluno}\niDADE: ${idade} anos`);
   }
 
 
   return (
     <>
       <h1>Estudando UseState</h1>
+      <h2>Aluno: {aluno}</h2>
+      <h3>Idade: {idade}</h3>
 
       <input
         type="text"
         placeholder="Digite seu nome"
         // Valor do input recebe o valor inicial do estado input
-        value={input}
+        value={aluno}
         // onChange - Evento disparado quando o input é alterado
         // {} - Função executada quando o evento é disparado
         // (e) - Parâmetro do evento
         // => - Arrow function
         // setInput(e.target.value) - Atualiza o estado input com estadoAtualizado = e.target.value
-        onChange={(e) => setInput(e.target.value)}
+        onChange={(e) => setAluno(e.target.value)}
+      />
+
+      <br />
+
+      <input
+        type="text"
+        placeholder="Digite sua idade"
+        value={idade}
+        onChange={(e) => setIdade(e.target.value)}
       />
 
       <br />
