@@ -7,19 +7,22 @@ import { useState } from "react";
 
 export default function App() {
 
+  // Interface para os props do componente Aluno
+  interface AlunoInfoProps{
+    nome: string;
+    idade: string | number;
+  }
+
   // DECLARANDO ESTADOS
   // const - constante
   // [aluno, setAluno] = Array de estados [estadoInicial, estadoAtualizado]
   // = Atribuição
   // useState("") - cria estado inicial, ("") no caso como vazio
-  const [nome, setNome] = useState<string | number>("")
+  const [nome, setNome] = useState("")
   const [idade, setIdade] = useState("")
 
-  // TIPAGEM DE ESTADOS
-  // - Podemos usar um tipo específico de dado ou mesmo diferentes tipos de dados num state
-  // - Caso não seja declarado o tipo de dado, ele vai se assumir com o tipo iniciado/accert type ("") string / (1234) number...
-  const [alunoNome, setAlunoNome] = useState<string | number>("Sem nenhum nome")
-  const [alunoIdade, setAlunoIdade] = useState<string | number>("Sem nenhuma idade")
+  // Unificando duas states num objeto
+  const [alunoInfo, setAlunoInfo] = useState<AlunoInfoProps>()
 
   // function - função
   // mostrarAluno - nome
@@ -27,9 +30,10 @@ export default function App() {
   // {} - Bloco de código que será executado
   // alert(input) - Função que exibe um alerta passando o valor do estado input
   function mostrarAluno() {
-    // Atualiza o estado aluno com o novo valoir de nome
-    setAlunoNome(nome);
-    setAlunoIdade(idade);
+    setAlunoInfo({
+      nome: nome,
+      idade: idade
+    })
   }
 
 
@@ -68,8 +72,8 @@ export default function App() {
         Mostrar Aluno
       </button>
 
-      <h3>Bem-vindo: {alunoNome}</h3>
-      <p>Idade: {alunoIdade} anos</p>
+      <h3>Bem-vindo: {alunoInfo?.nome}</h3>
+      <p>Idade: {alunoInfo?.idade} anos</p>
     </>
   )
 }
