@@ -1,5 +1,6 @@
 {/* HOOK useState */}
-{/* - Usar quando precisar de comportamento dinâmico */}
+{/* - Usar quando precisar de comportamentos dinâmicos */ }
+
 {/* 1) importar o hook useState do react */ }
 import "./reset.css"
 import { useState } from "react";
@@ -11,8 +12,9 @@ export default function App() {
   // [aluno, setAluno] = Array de estados [estadoInicial, estadoAtualizado]
   // = Atribuição
   // useState("") - cria estado inicial, ("") no caso como vazio
-  const [aluno, setAluno] = useState("")
+  const [nome, setNome] = useState("")
   const [idade, setIdade] = useState("")
+  const [aluno, setAluno] = useState("")
 
 
   // function - função
@@ -21,27 +23,28 @@ export default function App() {
   // {} - Bloco de código que será executado
   // alert(input) - Função que exibe um alerta passando o valor do estado input
   function mostrarAluno() {
-    alert(`ALUNO: ${aluno}\niDADE: ${idade} anos`);
+    // Atualiza o estado aluno com o novo valoir de nome
+    setAluno(nome);
+    // Exibo um alert com os valores atualizados de nome e idade
+    alert(`ALUNO: ${aluno}\nIDADE: ${idade} anos`);
   }
 
 
   return (
     <>
       <h1>Estudando UseState</h1>
-      <h2>Aluno: {aluno}</h2>
-      <h3>Idade: {idade}</h3>
 
       <input
         type="text"
         placeholder="Digite seu nome"
         // Valor do input recebe o valor inicial do estado input
-        value={aluno}
+        value={nome}
         // onChange - Evento disparado quando o input é alterado
         // {} - Função executada quando o evento é disparado
         // (e) - Parâmetro do evento
         // => - Arrow function
         // setInput(e.target.value) - Atualiza o estado input com estadoAtualizado = e.target.value
-        onChange={(e) => setAluno(e.target.value)}
+        onChange={(e) => setNome(e.target.value)}
       />
 
       <br />
@@ -62,7 +65,8 @@ export default function App() {
         Mostrar Aluno
       </button>
 
-
+      <h3>Bem-vindo: {aluno}</h3>
+      <p>Idade: {idade} anos</p>
     </>
   )
 }
