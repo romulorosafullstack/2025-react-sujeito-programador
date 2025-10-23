@@ -2,7 +2,7 @@
 {/* - Usar quando precisar de comportamentos dinâmicos */ }
 
 {/* 1) importar o hook useState do react */ }
-import "./reset.css"
+//import "./reset.css"
 import { useState } from "react";
 
 export default function App() {
@@ -24,6 +24,9 @@ export default function App() {
   // Unificando duas states num objeto
   const [alunoInfo, setAlunoInfo] = useState<AlunoInfoProps>()
 
+  // Declaro um state para o contado
+  const [contador, setContador] = useState(0)
+
   // function - função
   // mostrarAluno - nome
   // () - inicializador sewm param
@@ -34,6 +37,17 @@ export default function App() {
       nome: nome,
       idade: idade
     })
+  }
+
+  function contadorAdicionar() {
+    setContador(valorAtual => valorAtual + 1)
+  }
+
+  function contadorSubtrair() {
+    if (contador === 0) {
+      return;
+    }
+    setContador(valorAtual => valorAtual - 1)
   }
 
 
@@ -74,6 +88,13 @@ export default function App() {
 
       <h3>Bem-vindo: {alunoInfo?.nome}</h3>
       <p>Idade: {alunoInfo?.idade} anos</p>
+
+      <hr />
+      <br />
+      <h1>Contador com useState</h1>
+      <button onClick={contadorAdicionar}> + </button>
+      {contador}
+      <button onClick={contadorSubtrair}> - </button>
     </>
   )
 }
